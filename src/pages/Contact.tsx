@@ -116,9 +116,9 @@ export default function Contact() {
                 {
                   icon: <Mail className="w-5 h-5 text-primary" />,
                   label: "Email",
-                  value: "chavesluis2@gmail.com",
+                  value: "info@progressivetech-integrations.com",
                   sub: "We respond within 24 hours",
-                  href: "mailto:chavesluis2@gmail.com",
+                  href: "mailto:info@progressivetech-integrations.com",
                 },
                 {
                   icon: <MapPin className="w-5 h-5 text-primary" />,
