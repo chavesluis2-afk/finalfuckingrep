@@ -50,21 +50,21 @@ export default function Home() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
-              24/7 Professional Monitoring Available
+              Serving NY, NJ, CT & PA — Free Site Visits Available
             </motion.div>
             <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-8 leading-[1.1]">
-              Absolute Control <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Over Your Perimeter.</span>
+              Commercial Security <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Done Right.</span>
             </motion.h1>
             <motion.p variants={fadeIn} className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed">
-              Professional camera security installation, repairs, upgrades, and system additions for homes and businesses. We keep your property protected from day one — and for every day after.
+              Commercial security camera installation, repairs, upgrades, and system additions for cannabis dispensaries, property managers, hotels, and restaurants across NY, NJ, CT, and PA. Built for compliance, built to last.
             </motion.p>
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="h-14 px-8 text-lg font-semibold shadow-lg shadow-primary/20" asChild>
-                <a href="#contact">Secure Your Property <ChevronRight className="ml-2 w-5 h-5" /></a>
+                <a href="#contact">Get a Free Site Visit <ChevronRight className="ml-2 w-5 h-5" /></a>
               </Button>
               <Button size="lg" variant="outline" className="h-14 px-8 text-lg font-medium border-white/10 hover:bg-white/5" asChild>
-                <a href="#services">View Our Systems</a>
+                <a href="#services">View Our Work</a>
               </Button>
             </motion.div>
           </motion.div>
@@ -96,8 +96,66 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Industries Section */}
+      <section className="py-24 md:py-32 px-6">
+        <div className="container mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            className="mb-16 md:mb-24 text-center max-w-3xl mx-auto"
+          >
+            <motion.h2 variants={fadeIn} className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Industries We Serve.</motion.h2>
+            <motion.p variants={fadeIn} className="text-lg text-muted-foreground">We specialize in commercial security camera systems for businesses that require reliable, compliant, and scalable coverage.</motion.p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <Shield className="w-10 h-10 text-primary mb-6" />,
+                title: "Cannabis Dispensaries",
+                desc: "OCM-compliant camera systems covering every point of sale, entry, exit, and storage area. Audit-ready documentation included."
+              },
+              {
+                icon: <Camera className="w-10 h-10 text-primary mb-6" />,
+                title: "Property Management",
+                desc: "Full building coverage for common areas, parking, elevators, and entry points. We eliminate blind spots across single and multi-location properties."
+              },
+              {
+                icon: <Eye className="w-10 h-10 text-primary mb-6" />,
+                title: "Hotels",
+                desc: "Lobby, parking, elevator, and floor coverage built for guest safety and liability protection. Integrated seamlessly into existing systems."
+              },
+              {
+                icon: <Video className="w-10 h-10 text-primary mb-6" />,
+                title: "Restaurants & QSRs",
+                desc: "Interior and exterior coverage for dining areas, kitchens, entrances, and drive-throughs. Scalable across single or multiple locations."
+              }
+            ].map((industry, i) => (
+              <motion.div
+                key={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeIn}
+                className="bg-card/50 border border-white/5 p-8 rounded-xl hover:bg-card/80 transition-colors group"
+              >
+                <div className="bg-background rounded-lg w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  {industry.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-4">{industry.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {industry.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
-      <section id="services" className="py-24 md:py-32 px-6">
+      <section id="services" className="py-24 md:py-32 px-6 bg-card/20 border-y border-white/5">
         <div className="container mx-auto">
           <motion.div 
             initial="hidden"
@@ -115,7 +173,7 @@ export default function Home() {
               {
                 icon: <Camera className="w-10 h-10 text-primary mb-6" />,
                 title: "Installation",
-                desc: "Full camera security system design and installation for residential and commercial properties. Clean wiring, optimal camera placement, and zero blind spots."
+                desc: "Full camera security system design and installation for commercial properties. Clean wiring, optimal camera placement, and zero blind spots."
               },
               {
                 icon: <Wrench className="w-10 h-10 text-primary mb-6" />,
@@ -155,7 +213,7 @@ export default function Home() {
       </section>
 
       {/* Why Us / Tech Info */}
-      <section className="py-24 bg-card/20 border-y border-white/5 overflow-hidden">
+      <section className="py-24 border-y border-white/5 overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div 
@@ -197,21 +255,21 @@ export default function Home() {
                   <div className="mt-1"><Crosshair className="w-6 h-6 text-primary" /></div>
                   <div>
                     <h4 className="text-xl font-bold mb-2">Tactical Placement</h4>
-                    <p className="text-muted-foreground">We don't just hang cameras. We conduct a full architectural threat assessment to ensure overlapping fields of view with zero blind spots.</p>
+                    <p className="text-muted-foreground">We don't just hang cameras. We conduct a full site assessment to ensure overlapping fields of view with zero blind spots across your entire property.</p>
                   </div>
                 </motion.div>
                 <motion.div variants={fadeIn} className="flex gap-4">
                   <div className="mt-1"><Zap className="w-6 h-6 text-primary" /></div>
                   <div>
                     <h4 className="text-xl font-bold mb-2">Clean Wire Routing</h4>
-                    <p className="text-muted-foreground">Exposed wires are vulnerabilities. Our technicians specialize in invisible routing through complex structures for a clean, secure finish.</p>
+                    <p className="text-muted-foreground">Exposed wires are vulnerabilities. Our technicians specialize in invisible routing through complex commercial structures for a clean, secure finish.</p>
                   </div>
                 </motion.div>
                 <motion.div variants={fadeIn} className="flex gap-4">
                   <div className="mt-1"><Cpu className="w-6 h-6 text-primary" /></div>
                   <div>
                     <h4 className="text-xl font-bold mb-2">Enterprise Hardware</h4>
-                    <p className="text-muted-foreground">We deploy commercial-grade sensors featuring starlight night vision, thermal imaging, and AI-driven motion tracking.</p>
+                    <p className="text-muted-foreground">We deploy commercial-grade equipment featuring starlight night vision, thermal imaging, and AI-driven motion tracking built for business environments.</p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -251,17 +309,17 @@ export default function Home() {
       {/* Testimonials */}
       <section id="testimonials" className="py-24 bg-card/30 border-y border-white/5">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-16 text-center">Secured Properties.</h2>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-16 text-center">What Our Clients Say.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-background border border-white/10 p-8 rounded-xl relative">
               <Lock className="w-12 h-12 text-white/5 absolute top-6 right-6" />
               <div className="flex gap-1 text-primary mb-6">
                 {[1,2,3,4,5].map(star => <StarIcon key={star} />)}
               </div>
-              <p className="text-lg italic text-muted-foreground mb-8">"Vanguard found blind spots my previous security company completely missed. The installation was incredibly clean—you can't see a single wire anywhere on the exterior."</p>
+              <p className="text-lg italic text-muted-foreground mb-8">"PTI found blind spots our previous installer completely missed. The work was clean, fast, and our system now meets full compliance requirements."</p>
               <div>
-                <div className="font-bold">Marcus T.</div>
-                <div className="text-sm text-muted-foreground">Homeowner, North Hills</div>
+                <div className="font-bold">Operations Manager</div>
+                <div className="text-sm text-muted-foreground">Cannabis Dispensary, New Jersey</div>
               </div>
             </div>
             <div className="bg-background border border-white/10 p-8 rounded-xl relative">
@@ -269,10 +327,10 @@ export default function Home() {
               <div className="flex gap-1 text-primary mb-6">
                 {[1,2,3,4,5].map(star => <StarIcon key={star} />)}
               </div>
-              <p className="text-lg italic text-muted-foreground mb-8">"We needed a 16-camera setup for our warehouse. They mapped the whole facility, installed everything in two days, and trained our staff on the NVR system. Total professionals."</p>
+              <p className="text-lg italic text-muted-foreground mb-8">"We needed 16 cameras added to our existing system in Midtown. PTI mapped the whole building, eliminated every blind spot, and finished the job in one day. Total professionals."</p>
               <div>
-                <div className="font-bold">Sarah Jenkins</div>
-                <div className="text-sm text-muted-foreground">Operations Manager, Apex Logistics</div>
+                <div className="font-bold">Building Manager</div>
+                <div className="text-sm text-muted-foreground">Property Management Company, New York</div>
               </div>
             </div>
             <div className="bg-background border border-white/10 p-8 rounded-xl relative">
@@ -280,10 +338,10 @@ export default function Home() {
               <div className="flex gap-1 text-primary mb-6">
                 {[1,2,3,4,5].map(star => <StarIcon key={star} />)}
               </div>
-              <p className="text-lg italic text-muted-foreground mb-8">"The peace of mind is worth every penny. The night vision on these cameras is better than my vision during the day. Highly recommend Vanguard to anyone serious about security."</p>
+              <p className="text-lg italic text-muted-foreground mb-8">"We've worked with a few security companies before. PTI is the first one that actually understood what our hotel needed — coverage at every entrance, elevator, and parking level."</p>
               <div>
-                <div className="font-bold">David Chen</div>
-                <div className="text-sm text-muted-foreground">Property Developer</div>
+                <div className="font-bold">General Manager</div>
+                <div className="text-sm text-muted-foreground">Boutique Hotel, New Jersey</div>
               </div>
             </div>
           </div>
@@ -297,7 +355,7 @@ export default function Home() {
           <MapPin className="w-12 h-12 text-primary mx-auto mb-6" />
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Serving the Tri-State Area & Beyond</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-            We install, repair, and upgrade camera security systems across New York, New Jersey, Connecticut, and Pennsylvania. Local expertise, fast response, no long-distance delays.
+            We install, repair, and upgrade commercial camera security systems across New York, New Jersey, Connecticut, and Pennsylvania. Local expertise, fast response, no long-distance delays.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm font-medium">
             <span className="px-6 py-3 rounded-full border border-white/10 bg-card text-base">New York (NY)</span>
@@ -358,5 +416,4 @@ function StarIcon() {
   );
 }
 
-     
-                 
+         
